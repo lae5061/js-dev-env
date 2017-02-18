@@ -4,8 +4,10 @@
   "description": "Luc's Starter Kit",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check start-app",
+    "start": "npm-run-all --parallel security-check start-app lint:watch",
     "start-app": "babel-node buildScripts/srcServer.js",
+    "lint" : "esw webpack.config.* src buildScripts --color",
+    "lint:watch" : "npm run lint -- --watch",
     "security-check": "nsp check",
     "localtunnel":"lt --port 3000 --subdomain lcae",
     "share":"npm-run-all --parallel start-app localtunnel"
