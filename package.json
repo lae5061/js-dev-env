@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Luc's Starter Kit",
   "scripts": {
-    "prestart": "node buildScripts/startMessage.js",
+    "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check start-app",
-    "start-app": "node buildScripts/srcServer.js",
+    "start-app": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "localtunnel":"lt --port 3000 --subdomain lcae",
     "share":"npm-run-all --parallel start-app localtunnel"
